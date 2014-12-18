@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "ofxUI.h"
+#include "ofxMaxim.h"
+#include <vector>
 
 class ofApp : public ofBaseApp{
 
@@ -19,5 +21,12 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+    
+    vector<double> waveform;
+    maxiSample player;
+    maxiMix mix;
+    double outputs[2];
+    
+    void audioRequested(float * output, int bufferSize, int nChannels);
 		
 };
