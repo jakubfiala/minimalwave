@@ -25,7 +25,10 @@ class ofApp : public ofBaseApp{
     vector<double> waveform;
     maxiSample player;
     maxiMix mix;
+    maxiEnvelope env;
     double outputs[2];
+    double rate;
+    double adsr[8] = {1, 200, 0.4, 500, 0.35, 500, 0, 700};
     
     void audioRequested(float * output, int bufferSize, int nChannels);
 		
